@@ -24,4 +24,15 @@ Plots:
 
 ### Pendulum-v0:
 
-In training 
+TRAINED:
+
+
+![gif_ppo_mod_intermediate5626trained](https://user-images.githubusercontent.com/63811972/152566900-fd35e396-ab31-4211-9ed4-af0921f0f6ca.gif)
+
+
+
+Plots:
+
+![Pendulum-v0_PPO_BATCH_plot](https://user-images.githubusercontent.com/63811972/152566707-7c4e1d0e-5102-48e7-aab6-7c73ccd3ae77.png)
+
+
