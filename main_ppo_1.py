@@ -18,7 +18,7 @@ if __name__ == '__main__':
     biped = 'BipedalWalker-v3'
     mountain_car = 'MountainCarContinuous-v0'
 
-    BATCH_PPO = False            # which model to use
+    BATCH_PPO = True            # which model to use
 
     TESTING = False             # Set testing and test the model with gif function to record
     RECORD = False              # record model if testing
@@ -92,8 +92,9 @@ if __name__ == '__main__':
             reward_list = pickle.load(file)
             actor_loss_t = pickle.load(file)
             critic_loss_t = pickle.load(file)
+            losses_t = pickle.load(file)
 
-        plot(reward_list, actor_loss_t, critic_loss_t, ENV_NAME)
+        plot(reward_list, actor_loss_t, critic_loss_t, losses_t, ENV_NAME)
 
 
 

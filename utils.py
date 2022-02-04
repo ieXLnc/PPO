@@ -4,10 +4,10 @@ def gif(images, name, address="./recordings/"):
     images[0].save(address + name, save_all=True, append_images=images[1:], optimize=True, duration=40, loop=0)
 
 
-def plot(rewards_list, actor_loss_list, critic_loss_list, name_task):
+def plot(rewards_list, actor_loss_list, critic_loss_list, losses_t, name_task):
 
     # Create two plots: one for the loss value, one for the accuracy
-    fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(24, 6))
+    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, figsize=(18, 12))
 
     # Plot accuracy values
     ax1.plot(rewards_list, label='Mean rewards', color='red')
@@ -28,6 +28,12 @@ def plot(rewards_list, actor_loss_list, critic_loss_list, name_task):
     ax3.set_xlabel('Epoch')
     ax3.set_ylabel('Losses')
     ax3.legend()
+
+    ax4.plot(losses_t, label='General Losses', color='black')
+    ax4.set_title('General Losses for the {} task'.format(name_task))
+    ax4.set_xlabel('Epoch')
+    ax4.set_ylabel('Losses')
+    ax4.legend()
 
     plt.savefig("./Plots/" + name_task + '_plot.png')
     plt.show()
