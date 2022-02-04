@@ -14,8 +14,7 @@ TRAINED:
 
 Plots:
 
-![Pendulum-v0_PPO1_plot](https://user-images.githubusercontent.com/63811972/152555463-20743f58-f38a-4409-80b9-360f77d4f07b.png)
-
+![Pendulum-v0_PPO1_plot](https://user-images.githubusercontent.com/63811972/152562243-f187670b-cdf4-4939-9a2a-7be029ad5e8c.png)
 
 
 
