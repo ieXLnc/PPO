@@ -20,7 +20,6 @@ class ActorCriticNetwork(nn.Module):
         self.init_weights()
 
     def forward(self, obs):
-
         output = self.net(obs)
         return output
 
