@@ -2,7 +2,7 @@ import gym
 import torch  # Torch version :1.9.0+cpu
 from ppo_1 import Agent
 from ppo_batch import AgentBatch
-from network_1 import ActorCriticNetwork
+from network import ActorCriticNetwork
 from utils import gif, plot
 from PIL import Image
 import random
