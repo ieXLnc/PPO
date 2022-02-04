@@ -8,7 +8,7 @@ import torch  # Torch version :1.9.0+cpu
 from torch import nn
 from torch.distributions import MultivariateNormal
 from torch.optim import Adam
-from network_1 import ActorCriticNetwork
+from network import ActorCriticNetwork
 
 torch.manual_seed(14)
 np.random.default_rng(14)
