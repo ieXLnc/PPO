@@ -1,7 +1,7 @@
 # PPO
 
 
-## PPO_V1:
+## PPO_1:
 
 
 ### Pendulum-v0:
