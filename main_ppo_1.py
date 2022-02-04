@@ -26,9 +26,9 @@ if __name__ == '__main__':
 
     ENV_NAME = pendulum         # What env to use
     if BATCH_PPO:
-        name = './Models_ppo/PPO_batch_' + str(ENV_NAME) + '_actor_test' + '.pth'
+        name = './Models_ppo/PPO_batch_' + str(ENV_NAME) + '_actor' + '.pth'
     else:
-        name = './Models_ppo/PPO_' + str(ENV_NAME) + '_actor_test' + '.pth'
+        name = './Models_ppo/PPO_' + str(ENV_NAME) + '_actor' + '.pth'
 
     # if training
     TRAINING_STEPS = 100_000_000
