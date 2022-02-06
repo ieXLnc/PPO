@@ -64,9 +64,9 @@ Plots:
 
 
 ### Links 
-https://spinningup.openai.com/en/latest/algorithms/ppo.html
-https://medium.com/aureliantactics/ppo-hyperparameters-and-ranges-6fc2d29bccbe
-https://medium.com/@eyyu/coding-ppo-from-scratch-with-pytorch-part-1-4-613dfc1b14c8
-https://towardsdatascience.com/a-graphic-guide-to-implementing-ppo-for-atari-games-5740ccbe3fbc
-https://github.com/higgsfield/RL-Adventure-2/blob/master/3.ppo.ipynb
-https://www.youtube.com/watch?v=5P7I-xPq8u8
+* https://spinningup.openai.com/en/latest/algorithms/ppo.html
+* https://medium.com/aureliantactics/ppo-hyperparameters-and-ranges-6fc2d29bccbe
+* https://medium.com/@eyyu/coding-ppo-from-scratch-with-pytorch-part-1-4-613dfc1b14c8
+* https://towardsdatascience.com/a-graphic-guide-to-implementing-ppo-for-atari-games-5740ccbe3fbc
+* https://github.com/higgsfield/RL-Adventure-2/blob/master/3.ppo.ipynb
+* https://www.youtube.com/watch?v=5P7I-xPq8u8
