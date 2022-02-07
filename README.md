@@ -65,7 +65,7 @@ Hyperparams:
 - Learning rate: 0.0003
 - Gamma : 0.99
 - Clipping range: 0.2
-- Entropy Coefficient: 0.01
+- Entropy Coefficient: 0.001
 - Early stop (depends on the environment).
 
 
