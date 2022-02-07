@@ -83,6 +83,19 @@ Plots:
 ![Pendulum-v0_PPO_BATCH_plot](https://user-images.githubusercontent.com/63811972/152566707-7c4e1d0e-5102-48e7-aab6-7c73ccd3ae77.png)
 
 
+### BipedalWalker-v3
+
+TRAINED:
+
+![GIF_BIPED_BATCH_261](https://user-images.githubusercontent.com/63811972/152825405-738488d6-d7b9-409f-a1d3-89d6ed245de9.gif)
+
+
+Plots:
+
+![BipedalWalker-v3_plot_BATCH_DONE](https://user-images.githubusercontent.com/63811972/152825448-708af749-a8d9-4973-bd19-bd5af9901f5b.png)
+
+
+
 
 ### Links 
 * https://spinningup.openai.com/en/latest/algorithms/ppo.html
