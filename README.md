@@ -17,7 +17,7 @@ The first model I implemented (PPO_1) takes the following hyperparams:
 - Clipping range: 0.2
 - Entropy Coefficient: 0.01
 - Early stop (depends on the environment).
-- 
+
 The Actor and Critic come from the same Actor/Critic structure in network.py. They are composed of two hidden layers with 256 nodes each, taking the observation_space as input and action_space as output (Actor) or output = 1 (Critic). I initialize the weights of the model with the normal_ function from Pytorch to fill the input tensor with normally distributed values.
 
 The agent learns by taking a fixed set of steps (his horizon), calculating the discounted rewards and the advantages with (discounted_rewards - values) and normalizing it. He then updates (x Update_epoch) itself comparing his old policy (actor prediction while exploring) to the new policy (new prediction of the actor for n_update) and calculating the new value (new prediction of the critic for the actions). Both actor and critic losses are calculated and create the general loss with entropy to update both networks.
