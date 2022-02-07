@@ -19,6 +19,7 @@ class Agent:
         self._init_hyperparameters()
 
         self.env = gym.make(name)
+        self.env.action_space.seed(14)  # Set seed
         self.n_actions = self.env.action_space.shape[0]
         self.n_observations = self.env.observation_space.shape[0]
 
@@ -77,11 +78,11 @@ class Agent:
         self.gamma = 0.95                   # gamma
         self.update_model = 5               # How many times we update the model
         self.clip = 0.2                     # clip params
-        self.lr = 0.0005                     # learning rate
-        self.exploration_steps = 4096       # number of steps we take to learn
+        self.lr = 0.003                     # learning rate
+        self.exploration_steps = 4800       # number of steps we take to learn
         self. mini_batch_size = 64
         # self.max_steps_per_ep = 1600        # number of steps by episode
-        self.value_early_stop = -150         # implemented an early stop
+        self.value_early_stop = 250         # implemented an early stop
         self.early_stop = False
 
     def get_action(self, state):
@@ -126,7 +127,6 @@ class Agent:
         batch_rewards = []
         batch_dones = []
         batch_discounted_reward = []
-        batch_lens = []
         entropy = 0
 
         step = 0
@@ -145,14 +145,10 @@ class Agent:
             step += 1                                 # steps current explorations
             if done:
                 current_state = self.env.reset()
-                batch_lens.append(step+1)
 
             current_state = new_state
 
         batch_discounted_reward = self.compute_discounted_rewards(batch_rewards, batch_dones)
-
-        self.log['rewards'] = batch_rewards
-        self.log['batch_lens'] = batch_lens
 
         return torch.tensor(batch_states, dtype=torch.float), \
                torch.tensor(batch_actions, dtype=torch.float), \
@@ -195,7 +191,7 @@ class Agent:
 
                 actor_loss = (- torch.min(surr1, surr2)).mean()
                 critic_loss = nn.MSELoss()(values, batch_discounted_reward)
-                loss = 0.5 * critic_loss + actor_loss - 0.001 * entropy
+                loss = 0.5 * critic_loss + actor_loss - 0.01 * entropy
                 self.log['actor_loss'].append(actor_loss.detach())
                 self.log['critic_loss'].append(critic_loss.detach())
                 self.log['losses'].append(loss.detach())
@@ -276,7 +272,6 @@ class Agent:
         self.log['critic_loss_tracks'].append(mean_critic_loss)
         self.log['losses_tracks'].append(mean_loss)
 
-        self.log['rewards'] = []
         self.log['actor_losses'] = []
         self.log['critic_loss'] = []
         self.log['losses'] = []

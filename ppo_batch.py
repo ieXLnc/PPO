@@ -19,6 +19,7 @@ class AgentBatch:
         self._init_hyperparameters()
 
         self.env = gym.make(name)
+        self.env.action_space.seed(14)  # Set seed
         self.n_actions = self.env.action_space.shape[0]
         self.n_observations = self.env.observation_space.shape[0]
 
@@ -81,7 +82,7 @@ class AgentBatch:
         self.exploration_steps = 256       # number of steps we take to learn
         self. mini_batch_size = 64
         # self.max_steps_per_ep = 1600        # number of steps by episode
-        self.value_early_stop = -150         # implemented an early stop
+        self.value_early_stop = 300         # implemented an early stop
         self.early_stop = False
 
     def get_action(self, state):
@@ -256,10 +257,12 @@ class AgentBatch:
                 self.log['previous_mean'].append(mean_rew_ep)
                 self.log['actor_loss_tracks'].append(mean_actor_loss)
                 self.log['critic_loss_tracks'].append(mean_critic_loss)
+                self.log['losses_tracks'].append(mean_loss)
                 with open(self.drop_name_params, 'wb') as handle:
                     pickle.dump(self.log['previous_mean'], handle, protocol=pickle.HIGHEST_PROTOCOL)
                     pickle.dump(self.log['actor_loss_tracks'], handle, protocol=pickle.HIGHEST_PROTOCOL)
                     pickle.dump(self.log['critic_loss_tracks'], handle, protocol=pickle.HIGHEST_PROTOCOL)
+                    pickle.dump(self.log['losses_tracks'], handle, protocol=pickle.HIGHEST_PROTOCOL)
                 print(f'New Model saved with a reward mean of {mean_rew_ep}')
             else:
                 print(f"Best model so far: {self.log['previous_mean'][np.argmax(self.log['previous_mean'])]}")

@@ -8,9 +8,9 @@ from PIL import Image
 import random
 import pickle
 
-torch.manual_seed(14)
-
 if __name__ == '__main__':
+
+    torch.manual_seed(14)
 
     # Different env to test my PPO
     pendulum = 'Pendulum-v0'
@@ -24,7 +24,8 @@ if __name__ == '__main__':
     RECORD = False              # record model if testing
     TRAINING_OLD = False        # Use old model to re-start training
 
-    ENV_NAME = pendulum         # What env to use
+    ENV_NAME = lunar         # What env to use
+
     if BATCH_PPO:
         name = './Models_ppo/PPO_batch_' + str(ENV_NAME) + '_actor' + '.pth'
     else:
@@ -70,7 +71,7 @@ if __name__ == '__main__':
 
             if i % 2 == 0 and RECORD:  # Record
                 num = random.randint(0, 100000)
-                gif(images, 'gif_ppo_mod_' + 'intermediate' + str(num) + 'trained.gif')
+                gif(images, 'gif_ppo_mod_' + ENV_NAME + "_" + str(num) + 'trained.gif')
 
         env.close()
 
