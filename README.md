@@ -56,6 +56,19 @@ Plots:
 
 ## PPO_Batch
 
+The implementation of the second PPO model follows the first one in all point but instead of taking several trajectories with N steps, takes a number of steps (here 256) and divide it into mini-batches that are randomized and fed to the Actor/Critic models.
+
+Hyperparams: 
+- Horizon (number of steps the agent takes to update itself at each learning iteration): 256
+- mini batches size: 64
+- Update_epoch (number of epochs of update of the model): 5
+- Learning rate: 0.0003
+- Gamma : 0.99
+- Clipping range: 0.2
+- Entropy Coefficient: 0.01
+- Early stop (depends on the environment).
+
+
 ### Pendulum-v0:
 
 TRAINED:
