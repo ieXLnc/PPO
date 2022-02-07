@@ -44,6 +44,18 @@ Plots:
 
 
 
+### BipedalWalker-v3
+
+TRAINED:
+
+![GIF_BIPED_289](https://user-images.githubusercontent.com/63811972/152756433-bf651178-1d3b-4776-8dbf-f936b7418bcb.gif)
+
+
+Plots:
+ 
+![BipedalWalker-v3_plot_PPO_1_DONE](https://user-images.githubusercontent.com/63811972/152756513-1caa4004-46f3-491e-a308-c46220502a4d.png)
+
+
 
 
 ## PPO_Batch
